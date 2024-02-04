@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,8 +13,29 @@
   color: white;
 }
 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.video {
+  width: 80%;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.counter {
+  margin-top: 20px;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {

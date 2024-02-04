@@ -5,11 +5,13 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  const handleCount = (prev, curr) => {
-    console.log("prev", prev);
-    console.log("curr", curr);
-    setCount(count + 1);
+  const handleCount = () => {
+    setCount((prevCount) => {
+      console.log("Previous count:", prevCount);
+      return prevCount + 1;
+    });
   };
+
   const click = () => {
     alert("ok");
   };
@@ -24,11 +26,12 @@ function App() {
       {product.title}
     </li>
   ));
+
   return (
     <div className="App">
       <header className="App-header">
         {/* Render the video */}
-        <video width="620" height="360" controls>
+        <video className="video" controls>
           <source
             src="https://confident-video.s3.amazonaws.com/confident.mp4"
             type="video/mp4"
@@ -45,6 +48,7 @@ function App() {
         </p>
         <button onClick={click}>Click here</button>
         <ul>{listItem}</ul>
+
         {/* Render a link */}
         <a
           className="App-link"
