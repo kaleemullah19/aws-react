@@ -43,8 +43,7 @@ function App() {
         <button onClick={handleCount}>Counter {count}</button>
         <h1>Welcome to My React App</h1>
         <p>
-          This is a sample React application created by Kaleem and Shukrullah
-          Khan.
+          This is a sample React application created by Kaleem and Shadab Khan.
         </p>
         <button onClick={click}>Click here</button>
         <ul>{listItem}</ul>
