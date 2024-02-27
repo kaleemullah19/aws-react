@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -6,15 +6,13 @@ function App() {
   const [count, setCount] = useState(0);
 
   const handleCount = () => {
-    setCount((prevCount) => {
-      console.log("Previous count:", prevCount);
-      return prevCount + 1;
-    });
+    setCount((prevCount) => prevCount + 1);
   };
 
   const click = () => {
     alert("ok");
   };
+
   const products = [
     { title: "Cabbage", id: 1, isFruit: false },
     { title: "Garlic", id: 2, isFruit: false },
@@ -22,7 +20,10 @@ function App() {
   ];
 
   const listItem = products.map((product) => (
-    <li style={{ color: product.isFruit ? "green" : "red" }} key={product.id}>
+    <li
+      className={`list-item${product.isFruit ? " fruit" : ""}`}
+      key={product.id}
+    >
       {product.title}
     </li>
   ));
@@ -30,7 +31,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* Render the video */}
         <video className="video" controls>
           <source
             src="https://confident-video.s3.amazonaws.com/confident.mp4"
@@ -39,18 +39,16 @@ function App() {
           Your browser does not support the video tag.
         </video>
 
-        {/* Render some text */}
-        <button onClick={handleCount}>Counter {count}</button>
-        <h1>Welcome to My React App</h1>
-        <p>
-          This is a sample React application created by Kaleem and Shadab Khan.
-        </p>
-        <button onClick={click}>Click here</button>
+        <button className="button" onClick={handleCount}>
+          Counter {count}
+        </button>
+        <button className="button" onClick={click}>
+          Click here
+        </button>
         <ul>{listItem}</ul>
 
-        {/* Render a link */}
         <a
-          className="App-link"
+          className="App-link button"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -58,7 +56,6 @@ function App() {
           Learn React
         </a>
 
-        {/* Render the logo */}
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
